@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liên Hệ | Ng Huu Duong</title>
+  <!-- Thư viện icon FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root {
+      --bg-color: #0d1117;
+      --card-bg: #161b22;
+      --border-color: #30363d;
+      --text-main: #f0f6fc;
+      --text-sub: #8b949e;
+      --accent: #58a6ff;
+      --btn-hover: #21262d;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .profile-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 36px 28px;
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--accent);
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: 22px;
+      margin-bottom: 6px;
+    }
+
+    .bio {
+      font-size: 14px;
+      color: var(--text-sub);
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+
+    .links-container {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #0d1117;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 12px 16px;
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .contact-item:hover {
+      background: var(--btn-hover);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    /* Hiệu ứng màu riêng cho Facebook và Instagram khi rê chuột */
+    .contact-item.facebook:hover {
+      border-color: #1877F2;
+    }
+    .contact-item.facebook i.brand-icon {
+      color: #1877F2;
+    }
+
+    .contact-item.instagram:hover {
+      border-color: #E4405F;
+    }
+    .contact-item.instagram i.brand-icon {
+      color: #E4405F;
+    }
+
+    .contact-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .contact-left i {
+      font-size: 18px;
+      width: 20px;
+      text-align: center;
+      color: var(--accent);
+    }
+
+    .copy-badge {
+      font-size: 12px;
+      color: var(--text-sub);
+      background: var(--card-bg);
+      padding: 4px 8px;
+      border-radius: 6px;
+      border: 1px solid var(--border-color);
+    }
+
+    footer {
+      margin-top: 24px;
+      font-size: 12px;
+      color: var(--text-sub);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="profile-card">
+    <img src="https://www.facebook.com/photo/?fbid=882686421154199&set=a.100508222705360" alt="Avatar" class="avatar">
+    
+    <h1>Ng Huu Duong</h1>
+    <p class="bio">              <br>Kết nối với mình qua các kênh bên dưới nhé!</p>
+
+    <div class="links-container">
+      <!-- Link Facebook -->
+      <a href="https://facebook.com/anhduongsongan" target="_blank" class="contact-item facebook">
+        <div class="contact-left">
+          <i class="fa-brands fa-facebook brand-icon"></i>
+          <span>Facebook</span>
+        </div>
+        <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 12px; color: #8b949e;"></i>
+      </a>
+
+      <!-- Link Instagram -->
+      <a href="https://instagram.com/nghuuduong" target="_blank" class="contact-item instagram">
+        <div class="contact-left">
+          <i class="fa-brands fa-instagram brand-icon"></i>
+          <span>Instagram</span>
+        </div>
+        <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 12px; color: #8b949e;"></i>
+      </a>
+
+        <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 12px; color: #8b949e;"></i>
+      </a>
+
+      <!-- Bấm để copy SĐT / Zalo -->
+      <div class="contact-item" onclick="copyText('0899847469', this)">
+        <div class="contact-left">
+          <i class="fa-solid fa-phone"></i>
+          <span>0899847469 (Zalo)</span>
+        </div>
+        <span class="copy-badge">Sao chép</span>
+      </div>
+
+      <!-- Bấm để copy Email -->
+      <div class="contact-item" onclick="copyText('nghuuduong6666@gmail.com', this)">
+        <div class="contact-left">
+          <i class="fa-solid fa-envelope"></i>
+          <span>nghuuduong6666@gmail.com</span>
+        </div>
+        <span class="copy-badge">Sao chép</span>
+      </div>
+    </div>
+
+    <footer>© 2026 • Hosted on GitHub Pages</footer>
+  </div>
+
+  <script>
+    function copyText(text, element) {
+      navigator.clipboard.writeText(text);
+      const badge = element.querySelector('.copy-badge');
+      const originalText = badge.innerText;
+      badge.innerText = 'Đã chép!';
+      badge.style.color = '#3fb950';
+      badge.style.borderColor = '#3fb950';
+      
+      setTimeout(() => {
+        badge.innerText = originalText;
+        badge.style.color = '';
+        badge.style.borderColor = '';
+      }, 2000);
+    }
+  </script>
+
+</body>
+</html>
